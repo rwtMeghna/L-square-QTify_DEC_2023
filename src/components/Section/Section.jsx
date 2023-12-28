@@ -2,6 +2,7 @@ import React  , {useState} from "react";
 import Card from "../Card/Card.jsx"
 import styles from "./Section.module.css";
 import {CircularProgress} from "@mui/material";
+import Caraousel from "../Caraousel/Carausel.jsx";
 
 export default function Section({title , data , type}){
 
@@ -33,11 +34,13 @@ export default function Section({title , data , type}){
                   
                  </div>
                     ):(
-                    //    Caraousel
-               null
+                    <Caraousel
+                    data={data}
+                    renderComponent={(data) => <Card data={data} type={type} />}
+                    />
             )}
         </div>
     )}
     </div>
-    )
+    );
                     }

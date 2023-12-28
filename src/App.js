@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import { Outlet } from 'react-router-dom';
 import { fetchNewAlbums, fetchTopAlbums } from './Api/Api';
+import { StyledEngineProvider } from '@mui/material';
 // import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 
 function App() {
@@ -29,8 +30,10 @@ const{ topAlbums=[] , newAlbums=[] , songs=[] }=data;
   return ( 
   <>
   <div>
+    <StyledEngineProvider injectFirst>
     <Navbar searchData={[...topAlbums, ...newAlbums]} />
     <Outlet context={{data: {topAlbums , newAlbums , songs} }}/>
+    </StyledEngineProvider>
     </div>
     </>
   );
