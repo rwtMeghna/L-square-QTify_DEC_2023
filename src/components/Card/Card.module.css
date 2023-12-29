@@ -32,7 +32,6 @@ border-radius: 10px;
 }
 
 
-
 .titleWrapper{
 margin-top: 6px;
 overflow: hidden;
@@ -41,7 +40,6 @@ text-overflow: ellipsis;
 display:-webkit-box;
 -webkit-box-orient: vertical;
 }
-
 
 
 .chip{
