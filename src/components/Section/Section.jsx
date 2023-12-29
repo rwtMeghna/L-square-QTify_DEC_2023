@@ -6,7 +6,7 @@ import Caraousel from "../Caraousel/Carausel.jsx";
 
 export default function Section({title , data , type}){
 
-    const [carouselToggle ,setCarouselToggle ] =useState(false);
+    const [carouselToggle ,setCarouselToggle ] =useState(true);
 
     const handleToggle = () => {
         setCarouselToggle((prevState) => !prevState);
