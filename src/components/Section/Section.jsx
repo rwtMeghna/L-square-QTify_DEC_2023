@@ -7,9 +7,10 @@ import Filters from "../Filters/Filters.jsx";
 
 export default function Section({ title, data, filterSource, type }) {
 
-    const [filters, setFilters] = useState([{ key: "all", label: "All" }])
+    const [filters, setFilters] = useState([{ key: "all", label: "All" }]);
+    const [selectedFilterIndex, setSelectedFilterIndex] = useState(0);
     const [carouselToggle, setCarouselToggle] = useState(true);
-    const [selectedFilterIndex, setselectedFilterIndex] = useState(0);
+    // const [selectedFilterIndex, setselectedFilterIndex] = useState(0);
 
     const handleToggle = () => {
         setCarouselToggle((prevState) => !prevState);
@@ -20,7 +21,7 @@ export default function Section({ title, data, filterSource, type }) {
             filterSource().then((response) => {
                 const { data } = response;
                 setFilters([...filters, ...data]);
-            })
+            });
         }
     }, [])
 
@@ -38,13 +39,16 @@ export default function Section({ title, data, filterSource, type }) {
                 <h4 className={styles.toggleText} onClick={handleToggle}>{!carouselToggle ? "Collapse All" : "Show All"}</h4>
             </div>
 
+
          {showFilters && (
          <div className={styles.filterWrapper}>
+
             <Filters
             filters={filters}
-            selectedFilterIndex={selectedFilterIndex}
-            setSelectedFilterIndex={setselectedFilterIndex}/>
-            </div>)
+            selectedFilterIndex ={selectedFilterIndex}
+            setSelectedFilterIndex={setSelectedFilterIndex}/>
+            </div>
+            )
          }
 
             {data.length === 0 ? (

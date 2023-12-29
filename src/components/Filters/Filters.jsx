@@ -25,17 +25,6 @@ function TabPanel(props) {
         </div>
     );
 }
-
-// function a11yProps(index: number) {
-//     return {
-//         id: `simple-tab-${index}`,
-//         'aria-controls': `simple-tabpanel-${index}`,
-//     };
-// }
-
-
-
-
 function Filters({ filters, selectedFilterIndex, setSelectedFilterIndex }) {
     const handleChange = (event, newValue) => {
         setSelectedFilterIndex(newValue);
@@ -65,7 +54,6 @@ function Filters({ filters, selectedFilterIndex, setSelectedFilterIndex }) {
                         label={ele.label}
                         {...a11yProps(idx)}
                     />
-
                 })}
             </Tabs>
             {filters.map((ele , idx)=>(
@@ -76,3 +64,5 @@ function Filters({ filters, selectedFilterIndex, setSelectedFilterIndex }) {
         </div>
     );
 }
+
+export default  Filters;
