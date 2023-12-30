@@ -13,6 +13,7 @@ function HomePage() {
   // console.log(topAlbums);
   // console.log(newAlbums);
   //   console.log(songs);
+
   return (
     <>
    <Hero/>
@@ -23,7 +24,7 @@ function HomePage() {
       title="Songs"
        data={songs} 
       filterSource={fetchFilters}
-      type="songs"/> 
+      type="song"/> 
      </div>
 </>
   );
