@@ -27,6 +27,7 @@ export const fetchNewAlbums=async()=>{
 export const fetchSongs=async()=>{
     try{
       const response=await axios.get(`${BACKEND_ENDPOINT}/songs`);
+      console.log(response);
       return response.data;
     }
     catch(e){
@@ -43,4 +44,4 @@ export const fetchFilters=async()=>{
     catch(e){
   console.error(e);
     }
-}
+};

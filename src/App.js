@@ -2,8 +2,9 @@ import React , {useEffect, useState} from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import { Outlet } from 'react-router-dom';
-import { fetchNewAlbums, fetchTopAlbums } from './Api/Api';
+import { fetchTopAlbums , fetchNewAlbums , fetchSongs } from './Api/Api';
 import { StyledEngineProvider } from '@mui/material';
+import { key } from '@mui/icons-material';
 // import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 
 function App() {
@@ -22,10 +23,10 @@ function App() {
  useEffect(()=>{
   generateData("topAlbums" , fetchTopAlbums);
   generateData("newAlbums" , fetchNewAlbums);
-  //  generateData("songs" , fetchSongs);
+   generateData("songs" , fetchSongs);
  } , []);
 
-const{ topAlbums=[] , newAlbums=[] , songs=[] }=data;
+const { topAlbums=[] , newAlbums=[] , songs=[] }=data;
 
   return ( 
   <>

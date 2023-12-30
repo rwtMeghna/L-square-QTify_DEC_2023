@@ -45,16 +45,18 @@ function Filters({ filters, selectedFilterIndex, setSelectedFilterIndex }) {
                 aria-label="basic tabs example"
                 TabIndicatorProps={{
                     style: {
-                        backgroundColor: 'var(--color-primary)',
+                        backgroundColor:'var(--color-primary)',
                     },
                 }}>
-                {filters.map((ele, idx) => {
-                    <Tab
+                {
+                    filters.map((ele,idx)=>{
+                        <Tab 
                         className={styles.tab}
                         label={ele.label}
-                        {...a11yProps(idx)}
-                    />
-                })}
+                        {...a11yProps(idx)} 
+                        />
+                    })
+                }
             </Tabs>
             {filters.map((ele , idx)=>(
                            <TabPanel value={ele.label}
